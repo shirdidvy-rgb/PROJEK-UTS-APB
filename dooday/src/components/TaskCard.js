@@ -62,7 +62,13 @@ const styles = StyleSheet.create({
   checkButton: { padding: 2 },
   info: { flex: 1 },
   title: { fontSize: 15, fontWeight: '700', color: colors.text },
-  completedTitle: { textDecorationLine: 'line-through', color: colors.muted },
+    completedTitle: { 
+        textDecorationLine: 'line-through', 
+        textDecorationStyle: 'solid',
+        textDecorationColor: colors.text,
+        textDecorationThickness: 2,
+        color: colors.muted 
+    },
   subject: { fontSize: 12, color: colors.muted, marginTop: 4 },
   priorityBadge: { paddingHorizontal: 9, paddingVertical: 5, borderRadius: 9 },
   priorityText: { color: colors.text, fontSize: 10, fontWeight: '700' },
