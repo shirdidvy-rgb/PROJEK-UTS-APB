@@ -106,10 +106,6 @@ const CalendarScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.screen}>
       <Text style={styles.title}>My Calendar</Text>
-      <Text style={styles.subtitle}>
-        Your deadlines, all in one view.
-      </Text>
-
       <View style={styles.infoCard}>
         <Text style={styles.infoTitle}>Upcoming schedule</Text>
         <Text style={styles.infoText}>
@@ -179,11 +175,6 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: '800',
     color: colors.text,
-  },
-  subtitle: {
-    color: colors.muted,
-    fontSize: 14,
-    marginTop: 5,
   },
   infoCard: {
     backgroundColor: colors.softGreen,
