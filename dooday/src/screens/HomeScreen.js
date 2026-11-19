@@ -36,7 +36,6 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.header}>
           <View>
             <Text style={styles.greeting}>Hello, there!</Text>
-            <Text style={styles.subtitle}>Let's make today productive.</Text>
           </View>
         </View>
 
@@ -77,7 +76,6 @@ const styles = StyleSheet.create({
   content: { paddingHorizontal: 20, paddingTop: 14, paddingBottom: 90 },
   header: { marginBottom: 23 },
   greeting: { fontSize: 26, fontWeight: "800", color: colors.text },
-  subtitle: { fontSize: 14, color: colors.muted, marginTop: 5 },
   sectionHeader: {
     flexDirection: "row",
     justifyContent: "space-between",

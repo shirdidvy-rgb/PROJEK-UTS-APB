@@ -13,11 +13,6 @@ const globalStyles = StyleSheet.create({
     fontWeight: "800",
     color: colors.text,
   },
-  subtitle: {
-    fontSize: 14,
-    color: colors.muted,
-    marginTop: 5,
-  },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "700",

@@ -40,7 +40,6 @@ const TasksScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.screen}>
       <Text style={styles.title}>My Tasks</Text>
-      <Text style={styles.subtitle}>All your assignments in one place.</Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -97,7 +96,6 @@ const styles = StyleSheet.create({
     paddingTop: 14,
   },
   title: { fontSize: 26, fontWeight: "800", color: colors.text },
-  subtitle: { fontSize: 14, color: colors.muted, marginTop: 5 },
   filterScroll: { flexGrow: 0, marginVertical: 20 },
   filters: { flexDirection: "row", gap: 8, paddingRight: 10 },
   filterButton: {
