@@ -1,5 +1,11 @@
 import React, { useCallback, useState } from "react";
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useFocusEffect } from "@react-navigation/native";
 
@@ -8,7 +14,7 @@ import TaskCard from "../components/TaskCard";
 import EmptyState from "../components/EmptyState";
 import { getTasks, updateTask } from "../storage/taskStorage";
 
-const filters = ["All", "To Do", "In Progress", "Completed"];
+const filters = ["All", "To Do", "Completed"];
 
 const TasksScreen = ({ navigation }) => {
   const [tasks, setTasks] = useState([]);
@@ -21,7 +27,8 @@ const TasksScreen = ({ navigation }) => {
     }, [loadTasks]),
   );
 
-  const filteredTasks = filter === "All" ? tasks : tasks.filter((task) => task.status === filter);
+  const filteredTasks =
+    filter === "All" ? tasks : tasks.filter((task) => task.status === filter);
 
   const handleToggle = async (task) => {
     await updateTask(task.id, {
@@ -34,7 +41,11 @@ const TasksScreen = ({ navigation }) => {
     <SafeAreaView style={styles.screen}>
       <Text style={styles.title}>My Tasks</Text>
       <Text style={styles.subtitle}>All your assignments in one place.</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filterScroll}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.filterScroll}
+      >
         <View style={styles.filters}>
           {filters.map((item) => (
             <TouchableOpacity
@@ -45,7 +56,12 @@ const TasksScreen = ({ navigation }) => {
                 filter === item && styles.activeFilter,
               ]}
             >
-              <Text style={[styles.filterText, filter === item && styles.activeFilterText ]}>
+              <Text
+                style={[
+                  styles.filterText,
+                  filter === item && styles.activeFilterText,
+                ]}
+              >
                 {item}
               </Text>
             </TouchableOpacity>
@@ -61,7 +77,9 @@ const TasksScreen = ({ navigation }) => {
             <TaskCard
               key={task.id}
               task={task}
-              onPress={() => navigation.navigate("TaskDetail", { taskId: task.id })}
+              onPress={() =>
+                navigation.navigate("TaskDetail", { taskId: task.id })
+              }
               onToggle={handleToggle}
             />
           ))
