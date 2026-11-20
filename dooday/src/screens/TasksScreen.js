@@ -1,11 +1,5 @@
 import React, { useCallback, useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useFocusEffect } from "@react-navigation/native";
 
@@ -13,6 +7,7 @@ import colors from "../styles/colors";
 import TaskCard from "../components/TaskCard";
 import EmptyState from "../components/EmptyState";
 import { getTasks, updateTask } from "../storage/taskStorage";
+import { Lucide } from "@react-native-vector-icons/lucide";
 
 const filters = ["All", "To Do", "Completed"];
 
@@ -68,7 +63,7 @@ const TasksScreen = ({ navigation }) => {
         </View>
       </ScrollView>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 90 }}>
         {filteredTasks.length === 0 ? (
           <EmptyState message="No tasks in this category yet." />
         ) : (
@@ -84,6 +79,10 @@ const TasksScreen = ({ navigation }) => {
           ))
         )}
       </ScrollView>
+
+      <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate("AddTask")}>
+        <Lucide name="plus" size={26} color={colors.text} />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -107,6 +106,18 @@ const styles = StyleSheet.create({
   activeFilter: { backgroundColor: colors.palePink },
   filterText: { color: colors.muted, fontSize: 12, fontWeight: "600" },
   activeFilterText: { color: colors.text },
+  addButton: {
+    position: "absolute",
+    right: 23,
+    bottom: 22,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: colors.green,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 4,
+  },
 });
 
 export default TasksScreen;

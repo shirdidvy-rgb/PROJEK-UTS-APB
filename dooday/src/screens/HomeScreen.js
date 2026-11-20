@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useFocusEffect } from "@react-navigation/native";
-import { Lucide } from "@react-native-vector-icons/lucide";
 
 import colors from "../styles/colors";
 import TaskCard from "../components/TaskCard";
@@ -63,10 +62,6 @@ const HomeScreen = ({ navigation }) => {
           ))
         )}
       </ScrollView>
-
-      <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate("AddTask")}>
-        <Lucide name="plus" size={26} color={colors.text} />
-      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -84,18 +79,6 @@ const styles = StyleSheet.create({
   },
   sectionTitle: { fontSize: 18, fontWeight: "700", color: colors.text },
   seeAll: { color: "#397B38", fontWeight: "700", fontSize: 13 },
-  addButton: {
-    position: "absolute",
-    right: 23,
-    bottom: 22,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: colors.green,
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 4,
-  },
 });
 
 export default HomeScreen;
